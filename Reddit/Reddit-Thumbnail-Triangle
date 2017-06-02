@@ -1,0 +1,46 @@
+@namespace url(http://www.w3.org/1999/xhtml);
+
+@-moz-document domain("www.reddit.com") {
+    .thumbnail:after {
+        float: right;
+        content: " ";
+        display: inline-block;
+        margin-top: -32px;
+        width: 0px;
+        height: 0px;
+        border-bottom: 32px solid #FFF;
+        border-left: 32px solid transparent;
+        position: relative;
+        z-index: 1;
+        filter: saturate(70%) contrast(60%);
+    }
+    
+    /* unset non-image thumbnails */
+    .thumbnail.image:after,
+    .thumbnail.default:after,
+    .thumbnail.spoiler:after,
+    .thumbnail.self:after {
+        content: unset;
+    }
+
+
+    /*  Videos with sound */
+    .thumbnail[href*="youtube.com"]:after,
+    .thumbnail[href*="twitch.tv"]:after,
+    .thumbnail[href*="eroshare.com"]:after {
+        border-bottom-color: red;
+    }
+
+    /* Animated/Videos without sound */
+    .thumbnail[href*="gfycat.com"]:after {
+        border-bottom-color: green;
+    }
+    
+    /* Images */
+    .thumbnail[href^="/r/"]:after, /* redd.it */
+    .thumbnail[href*="imgur.com"]:after,
+    .thumbnail[href*="flickr.com"]:after,
+    .thumbnail[href*="artstation.com"]:after {
+        border-bottom-color: blue;
+    }
+}

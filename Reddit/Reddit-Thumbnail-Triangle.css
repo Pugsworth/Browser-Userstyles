@@ -37,7 +37,7 @@
     }
     
     /* Images */
-    .thumbnail[href^="/r/"]:after, /* redd.it */
+    .thumbnail[href*=".redd.it"]:after, /* redd.it */
     .thumbnail[href*="imgur.com"]:after,
     .thumbnail[href*="flickr.com"]:after,
     .thumbnail[href*="artstation.com"]:after {

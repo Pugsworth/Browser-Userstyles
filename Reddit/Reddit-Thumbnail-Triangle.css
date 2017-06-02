@@ -38,6 +38,7 @@
     
     /* Images */
     .thumbnail[href*=".redd.it"]:after, /* redd.it */
+    .thumbnail[href^="/r/"]:after,      /* redd.it again */
     .thumbnail[href*="imgur.com"]:after,
     .thumbnail[href*="flickr.com"]:after,
     .thumbnail[href*="artstation.com"]:after {
